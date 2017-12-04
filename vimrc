@@ -225,7 +225,10 @@ let OmniCpp_SelectFirstItem = 2    "自动弹出时自动跳至第一�?
 " omnicomplete end
 
 " ctrlp begin
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlP'
 set wildignore+=*.swp,*.o,*.in,*.inf 
+let g:ctrlp_working_path_mode=0
 let g:ctrlp_by_filename=1
 " ctrlp end 
 
