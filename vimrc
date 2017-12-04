@@ -8,13 +8,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'derekwyatt/vim-fswitch'
 Plugin 'Kien/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'sirver/ultisnips'
+Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'suan/vim-instant-markdown'
 Plugin 'DfrankUtil'
 Plugin 'vimprj'
 Plugin 'indexer.tar.gz'
@@ -23,6 +25,8 @@ Plugin 'indexer.tar.gz'
 
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
