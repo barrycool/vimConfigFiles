@@ -112,8 +112,8 @@ nmap <silent> <leader>sw :FSHere<cr>
 " airline  begin "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-nnoremap <F2> :bn<CR>
-nnoremap <F3> :bp<CR>
+nnoremap <F2> :bp<CR>
+nnoremap <F3> :bn<CR>
 " airline  end"
 
 "indexer begin
