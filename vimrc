@@ -16,7 +16,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'sirver/ultisnips'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'suan/vim-instant-markdown'
+"Plugin 'suan/vim-instant-markdown'
 Plugin 'DfrankUtil'
 Plugin 'vimprj'
 Plugin 'indexer.tar.gz'
@@ -223,6 +223,11 @@ let OmniCpp_DefaultNamespace=["std"]
 let OmniCpp_ShowPrototypeInAbbr=1  "打开显示函数原型
 let OmniCpp_SelectFirstItem = 2    "自动弹出时自动跳至第一�?
 " omnicomplete end
+
+" ctrlp begin
+set wildignore+=*.swp,*.o,*.in,*.inf 
+let g:ctrlp_by_filename=1
+" ctrlp end 
 
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
