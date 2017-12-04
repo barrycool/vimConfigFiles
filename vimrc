@@ -8,15 +8,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'derekwyatt/vim-fswitch'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Kien/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'sirver/ultisnips'
-Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'suan/vim-instant-markdown'
 Plugin 'DfrankUtil'
 Plugin 'vimprj'
 Plugin 'indexer.tar.gz'
@@ -25,8 +23,6 @@ Plugin 'indexer.tar.gz'
 
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
-
-Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -47,7 +43,6 @@ filetype plugin indent on
 if !has("gui_running")
 	set t_Co=256
 endif
-
 set background=dark
 "set background=light
 "colorscheme solarized
@@ -62,7 +57,7 @@ set laststatus=2
 
 " 禁止光标闪烁
 set gcr=a:block-blinkon0
-" " 禁止显示滚动�?
+" " 禁止显示滚动条
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
@@ -113,14 +108,14 @@ nmap <silent> <leader>sw :FSHere<cr>
 " airline  begin "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-nnoremap <F2> :bp<CR>
-nnoremap <F3> :bn<CR>
+nnoremap <F2> :bn<CR>
+nnoremap <F3> :bp<CR>
 " airline  end"
 
 "indexer begin
-" 设置插件 indexer 调用 ctags 的参�?
+" 设置插件 indexer 调用 ctags 的参数
 " " 默认 --c++-kinds=+p+l，重新设置为 --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v
-" " 默认 --fields=+iaS 不满�? YCM 要求，需改为 --fields=+iaSl
+" " 默认 --fields=+iaS 不满足 YCM 要求，需改为 --fields=+iaSl
 let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+iaSl --extra=+q"
 let g:indexer_disableCtagsWarning=1
 "indexer end 
@@ -184,7 +179,7 @@ highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
 
 let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" 只能�? #include 或已打开的文�?
+" 只能是 #include 或已打开的文件
 "nnoremap <leader>je :YcmCompleter GoToDefinition<CR>
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
@@ -199,29 +194,29 @@ let g:ycm_seed_identifiers_with_syntax=1
 "NERDTree begin
 " " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <leader>fl :NERDTreeToggle<CR>
-" " 设置NERDTree子窗口宽�?
+" " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=32
-" " 设置NERDTree子窗口位�?
+" " 设置NERDTree子窗口位置
 let NERDTreeWinPos="right"
 " " 显示隐藏文件
 let NERDTreeShowHidden=1
-" " NERDTree 子窗口中不显示冗余帮助信�?
+" " NERDTree 子窗口中不显示冗余帮助信息
 let NERDTreeMinimalUI=1
-" " 删除文件时自动删除文件对�? buffer
+" " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
-" autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 "NERDTree end
 
 " omnicomplete begin
 set completeopt=menu,menuone  
-let OmniCpp_MayCompleteDot=1    "打开  . 操作�?
-let OmniCpp_MayCompleteArrow=1  "打开 -> 操作�?
-let OmniCpp_MayCompleteScope=1  "打开 :: 操作�?
+let OmniCpp_MayCompleteDot=1    "打开  . 操作符
+let OmniCpp_MayCompleteArrow=1  "打开 -> 操作符
+let OmniCpp_MayCompleteScope=1  "打开 :: 操作符
 let OmniCpp_NamespaceSearch=1   "打开命名空间
 let OmniCpp_GlobalScopeSearch=1  
 let OmniCpp_DefaultNamespace=["std"]  
 let OmniCpp_ShowPrototypeInAbbr=1  "打开显示函数原型
-let OmniCpp_SelectFirstItem = 2    "自动弹出时自动跳至第一�?
+let OmniCpp_SelectFirstItem = 2    "自动弹出时自动跳至第一个
 " omnicomplete end
 
 " ctrlp begin
