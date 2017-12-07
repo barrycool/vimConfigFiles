@@ -1,3 +1,2 @@
-#pathogen
-this is from pathogen
+#vim configure file
 
